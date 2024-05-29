@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class SmoothUpDownMovement : MonoBehaviour
+public class ObjectFloat : MonoBehaviour
 {
-    public float moveAmount = 1/1.8f; 
+    public float moveAmount = 1/1.8f;
     public float moveDuration = 0.7f; 
 
     private Vector3 originalPosition;
