@@ -12,8 +12,7 @@ public class GameSession : MonoBehaviour
         Paused
     }
 
-
-    public Player Player;
+    public Player Player { get; private set; }
     public static GameSession Instance { get; private set; }
     public GameState State { get; private set; } 
 

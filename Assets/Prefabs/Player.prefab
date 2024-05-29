@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 815678437619748679}
@@ -80,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9739205, y: 2.947266}
+  m_Size: {x: 1, y: 2.947266}
   m_EdgeRadius: 0
 --- !u!50 &4106840981829149746
 Rigidbody2D:
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d817bd98e99d8446b3095e1d3eff35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGraphics: {fileID: 3028023739987819120}
   moveSpeed: 5
   jumpHeight: 15
   jumpAmount: 1
@@ -128,7 +129,7 @@ MonoBehaviour:
   gravityScaleDecrease: 0.985
   minGravity: 0.4
   StarBulletPrefab: {fileID: 1017225062437278519, guid: 019e78688db66e245a61aef9554f6e23, type: 3}
-  bulletSpeed: 6
+  bulletSpeed: 15
   jumpsLeft: 0
 --- !u!114 &6478856639970961165
 MonoBehaviour:
@@ -319,5 +320,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.1}
+  m_Size: {x: 0.99, y: 0.1}
   m_EdgeRadius: 0
