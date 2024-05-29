@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpHeight = 5f;
     [SerializeField] int jumpAmount = 2;
+    [SerializeField] float startGravityDecreaseAfter = 10f;
+    [SerializeField, Range(0f, 1f)] float gravityScaleDecrease = 1f;
+    [SerializeField, Min(0.1f)] float minGravity = 0.1f;
 
     [Header("Shooting")]
     [SerializeField] GameObject StarBulletPrefab;
@@ -17,6 +22,7 @@ public class Player : MonoBehaviour
     int jumpsLeft;
 
     Vector2 mousePos;
+    float defaultGravityScale;
 
 
     Rigidbody2D myRigidbody;
@@ -29,12 +35,14 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         groundCheck = GetComponentInChildren<Collider2D>();
         groundCheckMask = LayerMask.GetMask("Ground");
+        defaultGravityScale = myRigidbody.gravityScale;
     }
 
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         ResetJumpCheck();
+        CalculateGravityScale();
     }
 
     private void FixedUpdate()
@@ -70,11 +78,25 @@ public class Player : MonoBehaviour
         }
     }
 
+
     void OnShootStar()
     {
         Quaternion StarBulletRotation = Quaternion.FromToRotation(transform.position, mousePos);
         GameObject starInstance = Instantiate(StarBulletPrefab, transform.position, StarBulletRotation);
 
         starInstance.GetComponent<Rigidbody2D>().velocity = Vector2.up* bulletSpeed;
+    }
+
+    void CalculateGravityScale()
+    {
+        if (transform.position.y < startGravityDecreaseAfter) { return; }
+        float currentGravityScale;
+
+        currentGravityScale = defaultGravityScale * Mathf.Pow(gravityScaleDecrease, transform.position.y - startGravityDecreaseAfter);
+        if (currentGravityScale < minGravity) 
+        { 
+            currentGravityScale = minGravity; 
+        }
+        myRigidbody.gravityScale = currentGravityScale;
     }
 }
