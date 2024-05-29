@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpHeight = 5f;
     [SerializeField] int amountOfJumps = 2;
 
+    [Header("Shooting")]
+    [SerializeField] GameObject StarBulletPrefab;
+
     Rigidbody2D myRigidbody;
     LayerMask groundCheckMask;
 
