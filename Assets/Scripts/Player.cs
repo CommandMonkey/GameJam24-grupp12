@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     Vector2 jumpInput;
     [SerializeField] int jumpsLeft;
 
+    [Header("Shooting")]
+    [SerializeField] GameObject StarBulletPrefab;
+
     Rigidbody2D myRigidbody;
     Collider2D groundCheck;
     LayerMask groundCheckMask;
