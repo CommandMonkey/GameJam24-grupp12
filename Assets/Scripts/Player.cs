@@ -13,11 +13,13 @@ public class Player : MonoBehaviour
     Vector2 jumpInput;
 
     Rigidbody2D myRigidbody;
+    LayerMask groundCheckMask;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        //groundCheckMask = 
     }
 
     // Update is called once per frame
