@@ -7,32 +7,51 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float jumpHeight = 5f;
-    [SerializeField] int amountOfJumps = 2;
+    [SerializeField] int jumpAmount = 2;
 
     Vector2 moveInput;
     Vector2 jumpInput;
+    [SerializeField] int jumpsLeft;
+
+    [Header("Shooting")]
+    [SerializeField] GameObject StarBulletPrefab;
 
     Rigidbody2D myRigidbody;
+    Collider2D groundCheck;
+    LayerMask groundCheckMask;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        groundCheck = GetComponentInChildren<Collider2D>();
+        groundCheckMask = LayerMask.GetMask("Ground");
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        Run();
+        if (groundCheck.IsTouchingLayers(groundCheckMask))
+        {
+            jumpsLeft = jumpAmount;
+        }
     }
 
-    void OnMove(InputValue value)
+    void OnMove()
     {
-        moveInput = value.Get<Vector2>();
-    }
 
-    void Run()
-    {
-        myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, jumpInput.y * jumpHeight);
+        void OnJump(InputValue value)
+        {
+            if (!groundCheck && jumpsLeft <= 0) { return; }
+            if (value.isPressed)
+            {
+                myRigidbody.velocity = new Vector2(0, jumpHeight);
+                jumpsLeft--;
+            }
+        }
+
+        void Run()
+        {
+            myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, myRigidbody.velocity.y);
+        }
     }
 }
