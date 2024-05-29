@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -34,15 +33,13 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        Run();
+
     }
 
-    void OnMove(InputValue value)
+    void OnMove()
     {
-        moveInput = value.Get<Vector2>();
-    }
 
     void OnJump(InputValue value)
     {
