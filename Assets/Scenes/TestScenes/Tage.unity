@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 299804551}
   - component: {fileID: 299804550}
   - component: {fileID: 299804552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,7 +902,7 @@ Transform:
   m_GameObject: {fileID: 1768060770}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.59, y: -3.48, z: 0}
+  m_LocalPosition: {x: 8.29, y: -1.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -923,8 +923,8 @@ MonoBehaviour:
   timer: 4
   door: {fileID: 274844952}
   posToMoveTo: {fileID: 1915026057}
-  doorMovmentSpeedTo: 0
-  doorMovmentSpeedBack: 0
+  doorMovmentSpeedTo: 10
+  doorMovmentSpeedBack: 5
 --- !u!61 &1768060774
 BoxCollider2D:
   m_ObjectHideFlags: 0
