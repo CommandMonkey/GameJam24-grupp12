@@ -92,10 +92,4 @@ public static class GameHelper
         return mappedValue;
     }
 
-    public static Quaternion GetAimingrotation()
-    {
-
-
-
-    }
 }
