@@ -177,7 +177,7 @@ MonoBehaviour:
   jumpHeight: 15
   jumpAmount: 2
   startGravityDecreaseAfter: 10
-  gravityScaleDecrease: 1
+  gravityScaleDecrease: 0.985
   minGravity: 0.1
   StarBulletPrefab: {fileID: 0}
   bulletSpeed: 0
