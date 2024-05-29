@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -8,12 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpHeight = 5f;
     [SerializeField] int jumpAmount = 2;
 
-    Vector2 moveInput;
-    Vector2 jumpInput;
-    [SerializeField] int jumpsLeft;
-
     [Header("Shooting")]
     [SerializeField] GameObject StarBulletPrefab;
+
+    Vector2 moveInput;
+    int jumpsLeft;
+
 
     Rigidbody2D myRigidbody;
     Collider2D groundCheck;
@@ -29,24 +30,22 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (groundCheck.IsTouchingLayers(groundCheckMask))
-        {
-            jumpsLeft = jumpAmount;
-        }
+        ResetJumpCheck();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
+        Run();
     }
 
-    void OnMove()
+    void OnMove(InputValue value)
     {
+        moveInput = value.Get<Vector2>();
+    }
 
     void OnJump(InputValue value)
     {
-        if (!groundCheck && jumpsLeft <= 0) { return; }
+        if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft - 1 <= 0) { return; }
         if (value.isPressed)
         {
             myRigidbody.velocity = new Vector2(0, jumpHeight);
@@ -57,5 +56,13 @@ public class Player : MonoBehaviour
     void Run()
     {
         myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, myRigidbody.velocity.y);
+    }
+
+    void ResetJumpCheck()
+    {
+        if (groundCheck.IsTouchingLayers(groundCheckMask))
+        {
+            jumpsLeft = jumpAmount;
+        }
     }
 }
