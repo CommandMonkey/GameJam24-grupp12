@@ -11,9 +11,12 @@ public class Player : MonoBehaviour
 
     [Header("Shooting")]
     [SerializeField] GameObject StarBulletPrefab;
+    [SerializeField] float bulletSpeed;
 
     Vector2 moveInput;
     int jumpsLeft;
+
+    Vector2 mousePos;
 
 
     Rigidbody2D myRigidbody;
@@ -30,6 +33,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         ResetJumpCheck();
     }
 
@@ -64,5 +68,13 @@ public class Player : MonoBehaviour
         {
             jumpsLeft = jumpAmount;
         }
+    }
+
+    void OnShootStar()
+    {
+        Quaternion StarBulletRotation = Quaternion.FromToRotation(transform.position, mousePos);
+        GameObject starInstance = Instantiate(StarBulletPrefab, transform.position, StarBulletRotation);
+
+        starInstance.GetComponent<Rigidbody2D>().velocity = Vector2.up* bulletSpeed;
     }
 }

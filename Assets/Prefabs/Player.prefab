@@ -205,7 +205,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpHeight: 5
-  amountOfJumps: 2
+  jumpAmount: 2
+  StarBulletPrefab: {fileID: 1017225062437278519, guid: 019e78688db66e245a61aef9554f6e23, type: 3}
+  bulletSpeed: 4
 --- !u!1 &8353324762198260405
 GameObject:
   m_ObjectHideFlags: 0
