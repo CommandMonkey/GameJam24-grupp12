@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaterCanScript : Collectible
 {
-    bool WaterCan;
+    public bool WaterCan;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Collect();
