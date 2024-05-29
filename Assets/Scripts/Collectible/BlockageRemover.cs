@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterCan : Collectible
+public class BlockageRemover : Collectible
 {
-
     public GameObject Blockage;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,11 +14,4 @@ public class WaterCan : Collectible
         }
     }
 
-    void RemoveBlockage()
-    {
-        if (Collect())
-        {
-            
-        }
-    }
 }
