@@ -21,7 +21,7 @@ public class NewTarget : InteractablePuzzle
 
     IEnumerator WaitRoutine()
     {
-        yield return new WaitForSecondsRealtime(0.25f);
+        yield return new WaitForSecondsRealtime(1f);
         isActive = false;
     }
 }
