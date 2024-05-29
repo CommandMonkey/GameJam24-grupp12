@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
+    [SerializeField] Collider2D groundCheck;
     [SerializeField] float jumpHeight = 5f;
     [SerializeField] int jumpAmount = 2;
     [SerializeField] float startGravityDecreaseAfter = 10f;
@@ -21,19 +23,22 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject StarBulletPrefab;
     [SerializeField] float bulletSpeed;
 
+    // Priv Vars
     Vector2 moveInput;
     int jumpsLeft;
-
+    LayerMask groundCheckMask;
     Vector2 mousePos;
     float defaultGravityScale;
 
+    // Priv Stats
+    int wateringCans;
     Cursor cursor;
-
     Rigidbody2D rigidbody2d;
-    Collider2D groundCheck;
-    LayerMask groundCheckMask;
+
+
     public PlayerInput playerInput;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         cursor = FindObjectOfType<Cursor>();
@@ -128,5 +133,67 @@ public class Player : MonoBehaviour
             currentGravityScale = minGravity; 
         }
         rigidbody2d.gravityScale = currentGravityScale;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        CheckForKeyInteractCollectables(collision.gameObject);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CheckForWalkIntoCollectables(collision.gameObject);
+    }
+
+    private void CheckForKeyInteractCollectables(GameObject colobject)
+    {
+        Collectible collectable = colobject.GetComponent<Collectible>();
+        if (collectable != null)
+        {
+            if (collectable.interactType == Collectible.Type.keyInterract)
+            {
+                collectable.SetCollectTextActive(true);
+            }
+        }
+    }
+    private void CheckForWalkIntoCollectables(GameObject colobject)
+    {
+        Collectible collectable = colobject.GetComponent<Collectible>();
+        if (collectable != null)
+        {
+            if (collectable.interactType == Collectible.Type.walkInto)
+            {
+                collectable.Collect();
+            }
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Collectible collectable = collision.gameObject.GetComponent<Collectible>();
+        if (collectable != null)
+        {
+            if (collectable.interactType == Collectible.Type.keyInterract)
+            {
+                collectable.SetCollectTextActive(false);
+            }
+        }
+    }
+
+    void OnInterract()
+    {
+
+    }
+
+    internal void AddWateringCan(int value)
+    {
+        wateringCans += value;
+        UpdateWateringCanUI();
+    }
+
+    private void UpdateWateringCanUI()
+    {
+        throw new NotImplementedException();
     }
 }
