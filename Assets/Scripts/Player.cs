@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] float bulletSpeed;
 
     Vector2 moveInput;
-    int jumpsLeft;
+    [SerializeField] int jumpsLeft;
 
     Vector2 mousePos;
     float defaultGravityScale;
@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
     void OnJump(InputValue value)
     {
+        Debug.Log("HAH");
         if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft - 1 <= 0) { return; }
         if (value.isPressed)
         {
