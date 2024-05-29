@@ -102,6 +102,11 @@ public class Player : MonoBehaviour
 
     void OnShootStar()
     {
+        if (cursor == null)
+        {
+            Debug.LogWarning("Needs A Cursor Object To Shoot, cant find any in the scene!!");
+            return;
+        }
         Vector2 direction = cursor.transform.position - transform.position;
         float angleInRadians = Mathf.Atan2(direction.y, direction.x);
         float angleInDegrees = angleInRadians * Mathf.Rad2Deg;
