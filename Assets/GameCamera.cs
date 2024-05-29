@@ -11,17 +11,23 @@ public class GameCamera : MonoBehaviour
 
     Camera camera;
 
+    float startZ;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        startZ = transform.position.z;
         camera = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target != null) return;
-        transform.position = (Vector2)Vector3.Lerp(transform.position, target.position, followWeight);
+        if (target == null) return;
+        Vector3 newPos = Vector3.Lerp(transform.position, target.position, followWeight);
+        newPos.z = startZ;
+        newPos.y = Mathf.Max(0, newPos.y);
+        transform.position = newPos;
     }
 }

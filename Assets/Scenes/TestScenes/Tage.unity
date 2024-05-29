@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefd6af63d1b8aa45a19a238d89c4d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howLongTostayOpen: 2.5
+  howLongTostayOpen: 5
   doorOpeningSpeed: 10
   doorClosingSpeed: 5
   posToMoveTo: {fileID: 1915026057}
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   isActive: 0
   canInteract:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!1 &1915026056
 GameObject:
   m_ObjectHideFlags: 0

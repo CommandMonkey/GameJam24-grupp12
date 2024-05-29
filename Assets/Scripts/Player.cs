@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using UnityEngine.WSA;
-using static UnityEngine.GraphicsBuffer;
+
 
 public class Player : MonoBehaviour
 {
@@ -19,13 +15,14 @@ public class Player : MonoBehaviour
     [SerializeField] float startGravityDecreaseAfter = 10f;
     [SerializeField, Range(0f, 1f)] float gravityScaleDecrease = 1f;
     [SerializeField, Min(0.1f)] float minGravity = 0.1f;
+    [SerializeField] float maxSpeed = 1f;
 
     [Header("Shooting")]
     [SerializeField] GameObject StarBulletPrefab;
     [SerializeField] float bulletSpeed;
 
     Vector2 moveInput;
-    [SerializeField] int jumpsLeft;
+    int jumpsLeft;
 
     Vector2 mousePos;
     float defaultGravityScale;
@@ -35,11 +32,12 @@ public class Player : MonoBehaviour
     Rigidbody2D rigidbody2d;
     Collider2D groundCheck;
     LayerMask groundCheckMask;
-
+    public PlayerInput playerInput;
     // Start is called before the first frame update
     void Start()
     {
         cursor = FindObjectOfType<Cursor>();
+        playerInput = GetComponent<PlayerInput>();
 
         rigidbody2d = GetComponent<Rigidbody2D>();
         groundCheck = GetComponentInChildren<Collider2D>();
@@ -81,14 +79,15 @@ public class Player : MonoBehaviour
         if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) { return; }
         if (value.isPressed)
         {
-            rigidbody2d.velocity = new Vector2(0, jumpHeight);
+            rigidbody2d.velocity += new Vector2(0, jumpHeight); 
             jumpsLeft--;
         }
     }
 
     void Run()
     {
-        rigidbody2d.velocity = new Vector2(moveInput.x * moveSpeed, rigidbody2d.velocity.y);
+        float moveX = moveInput.x * moveSpeed;
+        rigidbody2d.velocity = new Vector2(Mathf.Clamp(moveX + rigidbody2d.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp(rigidbody2d.velocity.y, -maxSpeed, maxSpeed));
     }
 
     void ResetJumpCheck()
