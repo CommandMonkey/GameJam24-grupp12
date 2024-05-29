@@ -354,8 +354,8 @@ GameObject:
   - component: {fileID: 1703484303}
   - component: {fileID: 1703484302}
   - component: {fileID: 1703484301}
-  m_Layer: 0
-  m_Name: Static Sprite
+  m_Layer: 3
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,6 +508,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Size.y
+      value: 0.06986606
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.47006655
+      objectReference: {fileID: 0}
     - target: {fileID: 6136186733020375933, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
       propertyPath: m_Name
       value: Player
