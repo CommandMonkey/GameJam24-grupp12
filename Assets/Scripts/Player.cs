@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -32,27 +33,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnMove()
     {
 
-    void OnJump(InputValue value)
-    {
-        if (!groundCheck && jumpsLeft <= 0) { return; }
-        if (value.isPressed)
+        void OnJump(InputValue value)
         {
-            myRigidbody.velocity = new Vector2(0, jumpHeight);
-            jumpsLeft--;
+            if (!groundCheck && jumpsLeft <= 0) { return; }
+            if (value.isPressed)
+            {
+                myRigidbody.velocity = new Vector2(0, jumpHeight);
+                jumpsLeft--;
+            }
         }
-    }
 
-    void Run()
-    {
-        myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, myRigidbody.velocity.y);
+        void Run()
+        {
+            myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, myRigidbody.velocity.y);
+        }
     }
 }
