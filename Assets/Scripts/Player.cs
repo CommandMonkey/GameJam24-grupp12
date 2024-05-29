@@ -81,10 +81,11 @@ public class Player : MonoBehaviour
 
     void OnShootStar()
     {
+        Debug.Log(mousePos);
         Quaternion StarBulletRotation = Quaternion.FromToRotation(transform.position, mousePos);
         GameObject starInstance = Instantiate(StarBulletPrefab, transform.position, StarBulletRotation);
 
-        starInstance.GetComponent<Rigidbody2D>().velocity = Vector2.up * bulletSpeed;
+        starInstance.GetComponent<Rigidbody2D>().velocity = starInstance.transform.right * bulletSpeed;
     }
 
     void CalculateGravityScale()
