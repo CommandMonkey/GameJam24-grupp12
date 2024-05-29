@@ -57,7 +57,6 @@ public class Player : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        Debug.Log("HAH");
         if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft - 1 <= 0) { return; }
         if (value.isPressed)
         {

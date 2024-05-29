@@ -178,9 +178,10 @@ MonoBehaviour:
   jumpAmount: 2
   startGravityDecreaseAfter: 10
   gravityScaleDecrease: 0.985
-  minGravity: 0.1
+  minGravity: 0.4
   StarBulletPrefab: {fileID: 0}
   bulletSpeed: 0
+  jumpsLeft: 0
 --- !u!114 &6478856639970961165
 MonoBehaviour:
   m_ObjectHideFlags: 0
