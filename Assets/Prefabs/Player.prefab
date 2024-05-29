@@ -179,7 +179,7 @@ MonoBehaviour:
   startGravityDecreaseAfter: 10
   gravityScaleDecrease: 0.985
   minGravity: 0.4
-  StarBulletPrefab: {fileID: 0}
+  StarBulletPrefab: {fileID: 1017225062437278519, guid: 019e78688db66e245a61aef9554f6e23, type: 3}
   bulletSpeed: 0
   jumpsLeft: 0
 --- !u!114 &6478856639970961165
