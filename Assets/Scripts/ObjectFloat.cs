@@ -34,7 +34,7 @@ public class ObjectFloat : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        // Ensure the final position is set correctly
+        // Ensure final pos is set correctly
         transform.position = targetPosition;
     }
 }
