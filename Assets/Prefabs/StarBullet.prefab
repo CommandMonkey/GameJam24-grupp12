@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3324309729476830005}
   - component: {fileID: 649485294421794986}
-  m_Layer: 0
+  - component: {fileID: 3694166239694400615}
+  m_Layer: 8
   m_Name: StarBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,6 +61,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &3694166239694400615
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017225062437278519}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &8104946931446943598
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585556992534325996}
   - component: {fileID: 832195654068688973}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StarBulletSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

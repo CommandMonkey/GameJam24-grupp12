@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class InteractablePuzzle : MonoBehaviour
 {
-    protected bool isActive; 
+    [SerializeField]protected bool isActive; 
     public bool CheckIfActiv { get { return isActive; }   }
 }
