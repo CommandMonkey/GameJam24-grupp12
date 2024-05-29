@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] float bulletSpeed;
 
     Vector2 moveInput;
-    int jumpsLeft;
+    [SerializeField] int jumpsLeft;
 
     Vector2 mousePos;
     float defaultGravityScale;
