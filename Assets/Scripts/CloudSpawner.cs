@@ -10,7 +10,7 @@ public class CloudSpawner : MonoBehaviour
     private Vector3 rightSpawnPosition = new Vector3(152, 0, 0);
 
     private float minY = 50f;
-    private float maxY = 250f;
+    private float maxY = 1000f;
 
     private float minZ = 5f;
     private float maxZ = 35f;
