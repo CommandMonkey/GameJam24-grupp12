@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField] bool stayOpen;
+    
     [SerializeField] float howLongTostayOpen;
     float timeUntilClosed;
     [SerializeField] float doorOpeningSpeed;
@@ -22,6 +24,9 @@ public class Door : MonoBehaviour
     }
     private void Update()
     {
+        if(stayOpen)
+            timeUntilClosed = howLongTostayOpen;
+
         if (ConnectedTo.CheckIfActiv)
             OpenDoor();
         else
