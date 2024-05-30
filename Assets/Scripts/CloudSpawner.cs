@@ -12,8 +12,8 @@ public class CloudSpawner : MonoBehaviour
     private float minY = 50f;
     private float maxY = 250f;
 
-    private float minZ = 0f;
-    private float maxZ = 30f;
+    private float minZ = 5f;
+    private float maxZ = 35f;
 
     public float cloudSpeed = 10f;
     public float spawnInterval = 5f;
