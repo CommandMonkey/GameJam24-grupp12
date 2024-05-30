@@ -371,7 +371,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6136186733020375933}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2ae7e94067625464494bde3c1b8f582a, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -455,10 +455,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 2ae7e94067625464494bde3c1b8f582a, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -503,7 +503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGraphics: {fileID: 3028023739987819120}
-  moveSpeed: 1
+  doubleJumpVFX: {fileID: 2897605861859445077, guid: 826899d07cb6fea4cb7771eadcb1542e, type: 3}
+  moveSpeed: 2
   groundCheck: {fileID: 2626021520880685157}
   jumpHeight: 20
   jumpAmount: 1
@@ -754,7 +755,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.1}
+  m_Size: {x: 0.71522313, y: 0.095044024}
   m_EdgeRadius: 0
 --- !u!1 &8883995919708525589
 GameObject:
@@ -858,20 +859,20 @@ MonoBehaviour:
   grappleToAll: 0
   hitLayers:
     serializedVersion: 2
-    m_Bits: 0
-  gunHolder: {fileID: 0}
+    m_Bits: 8
+  gunHolder: {fileID: 6468067354169705791}
   gunPivot: {fileID: 6256275458434689791}
   firePoint: {fileID: 6654905650475816564}
   rotateOverTime: 0
   rotationSpeed: 49.2
   hasMaxDistance: 1
   maxDistance: 20
-  launchToPoint: 1
-  launchType: 0
+  launchToPoint: 0
+  launchType: 1
   launchSpeed: 1.23
   autoConfigureDistance: 0
   targetDistance: 1
-  targetFrequency: 0.1
+  targetFrequency: 0.4
   m_springJoint2D: {fileID: 2815154001036663213}
   ballRigidbody: {fileID: 4106840981829149746}
   grapplePoint: {x: 0, y: 0}
