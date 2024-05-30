@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
             Mathf.Clamp(moveX + rigidbody2d.velocity.x, -maxSpeed, maxSpeed), 
             Mathf.Clamp(rigidbody2d.velocity.y, -maxSpeed, maxSpeed));
 
-        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsWalking", playerIsMoving);
     }
 
     void ResetJumpCheck()
