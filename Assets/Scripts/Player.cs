@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
         Vector2 spawnPosition = new Vector2(
             transform.position.x, 
             transform.position.y - transform.localScale.y / 2);
-        GameObject jumpVFX = Instantiate(doubleJumpVFX, transform.position, Quaternion.identity);
+        GameObject jumpVFX = Instantiate(doubleJumpVFX, spawnPosition, Quaternion.identity);
         Destroy(jumpVFX, 2f);
     }
 
