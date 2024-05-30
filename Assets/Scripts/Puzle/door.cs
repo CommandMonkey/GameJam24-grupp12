@@ -15,22 +15,35 @@ public class Door : MonoBehaviour
     [SerializeField] Transform posToMoveTo;
 
     [Tooltip("The target or button this door is coneected to")]
-    [SerializeField] InteractablePuzzle ConnectedTo;
+    [SerializeField] InteractablePuzzle[] ConnectedTo;
 
     Vector2 startPos;
     private void Start()
     {
         startPos = transform.position;
     }
+
     private void Update()
     {
+       
+
         if(stayOpen)
             timeUntilClosed = howLongTostayOpen;
 
-        if (ConnectedTo.CheckIfActiv)
+        if (allTrue())
             OpenDoor();
         else
             CloseDoor();
+    }
+
+    bool allTrue()
+    {
+        for(int i = 0; i < ConnectedTo.Length; i++)
+        {
+            if(ConnectedTo[i].CheckIfActiv == false) return false;
+        }
+
+        return true;
     }
 
     private void CloseDoor()

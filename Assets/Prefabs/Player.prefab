@@ -458,7 +458,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 5
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d817bd98e99d8446b3095e1d3eff35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGraphics: {fileID: 0}
+  playerGraphics: {fileID: 1869093593787485980}
   doubleJumpVFX: {fileID: 2897605861859445077, guid: 826899d07cb6fea4cb7771eadcb1542e, type: 3}
   moveSpeed: 2
   groundCheck: {fileID: 2626021520880685157}
@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: dc0cbc3b316fc1e4fb48fc6e0481e7bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.42
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: dc0cbc3b316fc1e4fb48fc6e0481e7bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -823,9 +823,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: dc0cbc3b316fc1e4fb48fc6e0481e7bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 314717864228441157}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: dc0cbc3b316fc1e4fb48fc6e0481e7bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8680741692943103331}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: dc0cbc3b316fc1e4fb48fc6e0481e7bc, type: 3}
 --- !u!1 &664355079010260863 stripped
 GameObject:
@@ -853,56 +850,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8680741692943103331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664355079010260863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_LightType: 2
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 21300000, guid: 48e080a9db58dea4ab70fef2d1444415, type: 3}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 1
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
-  m_ShadowIntensity: 0.795
-  m_ShadowVolumeIntensityEnabled: 0
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: -0.044999987, y: 0, z: 0}
-    m_Extent: {x: 0.985, y: 1.5, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
 --- !u!4 &1869093593787485980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: dc0cbc3b316fc1e4fb48fc6e0481e7bc, type: 3}
