@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloudPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6835528067617188920, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
+  - {fileID: 6505618141798976906, guid: f15ea631840178c4f9c09f164b0aba23, type: 3}
+  - {fileID: 2859819897696275589, guid: 38fffea2bc20df041ba5975881f6c563, type: 3}
+  - {fileID: 453088865020848708, guid: 7856fa56f8298764eb3e6b23bd58e104, type: 3}
+  - {fileID: 8522434107551936692, guid: d11ec0a21b52d3d4c805093cb351d8e7, type: 3}
+  - {fileID: 4058125723221791439, guid: f46e526f2bb496d4eb0d245833eadd67, type: 3}
+  - {fileID: 998367800459994055, guid: 2d01613f635fdb941bcc4f0c530706d8, type: 3}
+  - {fileID: 1606961106056131289, guid: 33df2f033c717894eb33d56aafd631bc, type: 3}
   cloudSpeed: 10
   spawnInterval: 2
