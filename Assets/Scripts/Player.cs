@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] Transform playerGraphics;
     [SerializeField] GameObject doubleJumpVFX;
+    [SerializeField] Animator animator;
  
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
 
 
     public PlayerInput playerInput;
+    InputAction descendAction;
 
 
     void Start()
@@ -48,6 +51,8 @@ public class Player : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         groundCheckMask = LayerMask.GetMask("Ground");
         defaultGravityScale = rigidbody2d.gravityScale;
+
+        descendAction = playerInput.actions["Descend"];
     }
 
     void Update()
@@ -73,16 +78,28 @@ public class Player : MonoBehaviour
     {
         Run();
     }
-
+    bool DownPressed = false;
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        DownPressed = moveInput.y < 0 ? true : false;
+        WalkAnimation();
+    }
+
+    void OnDescend(InputValue value)
+    { 
+            Debug.Log("ihoierjgh");
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.1f);
     }
 
     void OnJump(InputValue value)
     {
-        if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) { return; }
-        if (value.isPressed)
+        if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) return;
+        if (DownPressed)
+        {
+            OnDescend(new InputValue());
+        }
+        else // Jump
         {
             rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpHeight);
             PlayDoubleJumpVFX();
@@ -114,7 +131,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
     void OnShootStar()
     {
         if (cursor == null)
@@ -135,10 +151,10 @@ public class Player : MonoBehaviour
 
     void CalculateGravityScale()
     {
-        if (transform.position.y < startGravityDecreaseAfter) { return; }
+        if (transform.position.y < startGravityDecreaseAfter) return;
         float currentGravityScale;
 
-        currentGravityScale = defaultGravityScale * Mathf.Pow(gravityScaleDecrease, transform.position.y - startGravityDecreaseAfter);
+        currentGravityScale = defaultGravityScale * Mathf.Pow(gravityScaleDecrease, Mathf.Min(transform.position.y - startGravityDecreaseAfter, 1f));
         if (currentGravityScale < minGravity) 
         { 
             currentGravityScale = minGravity; 
@@ -190,6 +206,11 @@ public class Player : MonoBehaviour
                 collectable.SetCollectTextActive(false);
             }
         }
+    }
+
+    void WalkAnimation()
+    {
+        animator.SetBool("IsWalking", true);
     }
 
     void OnInterract()

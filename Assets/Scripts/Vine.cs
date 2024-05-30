@@ -29,10 +29,7 @@ public class Vine : MonoBehaviour
             growthLevel++;
         }
     }
-    void GrowVine()
-    {
-        
-    }
+   
     IEnumerator Grows(int i)
     {
         animator.speed = 1;

@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 6710797821693674905}
   - component: {fileID: 8164800294130606939}
   - component: {fileID: 1765561094237830769}
+  - component: {fileID: 8934982351224583504}
   m_Layer: 0
   m_Name: Vine_branch_leaves_2
   m_TagString: Untagged
@@ -278,6 +279,27 @@ MonoBehaviour:
     m_Extent: {x: 23.6175, y: 15.594498, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!95 &8934982351224583504
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710260218143754345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9c920617b1413f4daaaf4a931fb8455, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4806956488309094941
 GameObject:
   m_ObjectHideFlags: 0
