@@ -5847,6 +5847,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1710438729802834627, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Size.x
+      value: 0.71522313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Size.y
+      value: 0.095044024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106840981829149746, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106840981829149746, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6136186733020375933, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5891,6 +5915,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6676665717650446516, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6676665717650446516, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: doubleJumpVFX
+      value: 
+      objectReference: {fileID: 2897605861859445077, guid: 826899d07cb6fea4cb7771eadcb1542e, type: 3}
     - target: {fileID: 8843517018704336356, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
       propertyPath: gunHolder
       value: 
@@ -5902,6 +5934,10 @@ PrefabInstance:
     - target: {fileID: 8843517018704336356, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
       propertyPath: launchToPoint
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843517018704336356, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: targetFrequency
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8843517018704336356, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
       propertyPath: hitLayers.m_Bits
