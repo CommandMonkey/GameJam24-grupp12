@@ -584,6 +584,7 @@ GameObject:
   - component: {fileID: 2922641581024121415}
   - component: {fileID: 2269358747917749306}
   - component: {fileID: 2825422241308834948}
+  - component: {fileID: 8877819488835174048}
   m_Layer: 0
   m_Name: Vine_branch_many_1
   m_TagString: Untagged
@@ -672,85 +673,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RootBone: {fileID: 1748157867682675841}
-  m_BoneTransforms:
-  - {fileID: 1748157867682675841}
-  - {fileID: 6030406897295983196}
-  - {fileID: 2833437983294911489}
-  - {fileID: 3705640200226847280}
-  - {fileID: 4641999823964060729}
-  - {fileID: 2675342683840181526}
-  - {fileID: 3876791698479866216}
-  - {fileID: 4152148880326413074}
-  - {fileID: 7024244014589135697}
-  - {fileID: 1469134498726760084}
-  - {fileID: 5477379704815086888}
-  - {fileID: 2767261642674398852}
-  - {fileID: 7806681841137230605}
-  - {fileID: 4589111718399173240}
-  - {fileID: 3935268864167904935}
-  - {fileID: 4967360140604930750}
-  - {fileID: 8591050307408460783}
-  - {fileID: 8285964004496698863}
-  - {fileID: 935375921807120020}
-  - {fileID: 8651731138536904385}
-  - {fileID: 3488875528413870748}
-  - {fileID: 6138006327419500952}
-  - {fileID: 1112276530327067984}
-  - {fileID: 851883193477115895}
-  - {fileID: 1916438317462925645}
-  - {fileID: 2279172941572451414}
-  - {fileID: 747549068012005355}
-  - {fileID: 2016406058860638923}
-  - {fileID: 2555763097517295984}
-  - {fileID: 8818139475603098772}
-  - {fileID: 632471420928067656}
-  - {fileID: 3367752845275215753}
-  - {fileID: 1009826015493172703}
-  - {fileID: 4975875372466509026}
-  - {fileID: 5548837508520062742}
-  - {fileID: 3885142631346277911}
-  - {fileID: 3116450674005706662}
-  - {fileID: 7980935739474960012}
-  - {fileID: 7255797936180304995}
-  - {fileID: 1034738416019955127}
-  - {fileID: 8366253094929047948}
-  - {fileID: 5522309471925975405}
-  - {fileID: 728582813988126636}
-  - {fileID: 776434883667867522}
-  - {fileID: 1408539010250507664}
-  - {fileID: 6973336613567832761}
-  - {fileID: 8019753656149241423}
-  - {fileID: 4403302994245072196}
-  - {fileID: 3617571167046593752}
-  - {fileID: 6526561631935320479}
-  - {fileID: 4727805500679783816}
-  - {fileID: 8244310331096073040}
-  - {fileID: 144383472559058195}
-  - {fileID: 4761591613035894396}
-  - {fileID: 3772838554710039412}
-  - {fileID: 9201285148091303150}
-  - {fileID: 1449241549876379979}
-  - {fileID: 6156390234618127918}
-  - {fileID: 5669651814990549028}
-  - {fileID: 2089667303116367580}
-  - {fileID: 844078076101134885}
-  - {fileID: 292963932163081889}
-  - {fileID: 737320296773047055}
-  - {fileID: 1482102218191964715}
-  - {fileID: 8243275584542233805}
-  - {fileID: 2778116691242585673}
-  - {fileID: 209395034147702527}
-  - {fileID: 294629099068569817}
-  - {fileID: 2546016185227513848}
-  - {fileID: 5819194186351191528}
-  - {fileID: 1941925498367537041}
-  - {fileID: 2795382380141659865}
-  - {fileID: 2619447159364494092}
+  m_BoneTransforms: []
   m_Bounds:
     m_Center: {x: 311.82144, y: 117.38552, z: 0}
     m_Extent: {x: 74.96642, y: 97.015884, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!95 &8877819488835174048
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939088095214275310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 642c4ab3b802f504789e34d39500ebae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3019094419869379788
 GameObject:
   m_ObjectHideFlags: 0

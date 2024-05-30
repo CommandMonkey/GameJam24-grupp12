@@ -46,6 +46,7 @@ public class GrapplingGun : MonoBehaviour
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 DistanceVector;
     private Vector2 mouseFirePointDistanceVector;
+    float defultGravity;
 
     private Cursor cursor;
     private InputAction grappleAction;
@@ -63,7 +64,7 @@ public class GrapplingGun : MonoBehaviour
     {
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
-        ballRigidbody.gravityScale = 1;
+        defultGravity = ballRigidbody.gravityScale;
     }
 
     private void Update()
@@ -171,7 +172,7 @@ public class GrapplingGun : MonoBehaviour
         Debug.Log("Stop Grapple");
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
-        ballRigidbody.gravityScale = 1;
+        ballRigidbody.gravityScale = defultGravity;
     }
 
     private void OnDrawGizmos()
