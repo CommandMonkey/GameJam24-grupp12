@@ -44,6 +44,7 @@ public class Door : MonoBehaviour
         }
 
         return true;
+        //d
     }
 
     private void CloseDoor()
