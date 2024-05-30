@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
 
 
     public PlayerInput playerInput;
+    InputAction descendAction;
 
 
     void Start()
@@ -48,6 +50,8 @@ public class Player : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         groundCheckMask = LayerMask.GetMask("Ground");
         defaultGravityScale = rigidbody2d.gravityScale;
+
+        descendAction = playerInput.actions["Descend"];
     }
 
     void Update()
@@ -73,16 +77,27 @@ public class Player : MonoBehaviour
     {
         Run();
     }
-
+    bool DownPressed = false;
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        DownPressed = moveInput.y < 0 ? true : false;
+    }
+
+    void OnDescend(InputValue value)
+    { 
+            Debug.Log("ihoierjgh");
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.1f);
     }
 
     void OnJump(InputValue value)
     {
-        if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) { return; }
-        if (value.isPressed)
+        if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) return;
+        if (DownPressed)
+        {
+            OnDescend(new InputValue());
+        }
+        else // Jump
         {
             rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpHeight);
             PlayDoubleJumpVFX();
