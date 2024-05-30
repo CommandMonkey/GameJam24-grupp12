@@ -457,7 +457,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 5
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -506,9 +506,9 @@ MonoBehaviour:
   doubleJumpVFX: {fileID: 2897605861859445077, guid: 826899d07cb6fea4cb7771eadcb1542e, type: 3}
   moveSpeed: 2
   groundCheck: {fileID: 2626021520880685157}
-  jumpHeight: 20
+  jumpHeight: 100
   jumpAmount: 1
-  startGravityDecreaseAfter: 300
+  startGravityDecreaseAfter: 5000
   gravityScaleDecrease: 0.985
   minGravity: 0.4
   maxSpeed: 20
