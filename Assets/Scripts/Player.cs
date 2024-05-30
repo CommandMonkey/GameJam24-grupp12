@@ -217,10 +217,20 @@ public class Player : MonoBehaviour
 
     }
 
-    internal void AddWateringCan(int value)
+    internal bool AddWateringCan(int value)
     {
-        wateringCans += value;
-        UpdateWateringCanUI();
+        if (wateringCans + value < 0)
+        {
+            return false;
+        }
+        else
+        {
+            wateringCans += value;
+            UpdateWateringCanUI();
+            return true;
+        }
+
+
     }
 
     private void UpdateWateringCanUI()
