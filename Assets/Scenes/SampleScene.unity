@@ -5851,6 +5851,18 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Size.x
+      value: 0.71522313
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Size.y
+      value: 0.095044024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626021520880685157, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4106840981829149746, guid: 94a15a23cffc1444987f5cbf6dc9c355, type: 3}
       propertyPath: m_Material
       value: 

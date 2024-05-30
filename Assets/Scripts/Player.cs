@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         rigidbody2d = GetComponent<Rigidbody2D>();
-        groundCheck = GetComponentInChildren<Collider2D>();
         groundCheckMask = LayerMask.GetMask("Ground");
         defaultGravityScale = rigidbody2d.gravityScale;
     }
@@ -85,7 +84,7 @@ public class Player : MonoBehaviour
         if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) { return; }
         if (value.isPressed)
         {
-            rigidbody2d.velocity += new Vector2(0, jumpHeight);
+            rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpHeight);
             PlayDoubleJumpVFX();
             jumpsLeft--;
         }
