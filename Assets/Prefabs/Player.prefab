@@ -458,7 +458,7 @@ Rigidbody2D:
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2ae7e94067625464494bde3c1b8f582a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -856,7 +856,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grappleRope: {fileID: 5572118426163243664}
   grappleToAll: 0
-  grappableLayerNumber: 3
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 0
   gunHolder: {fileID: 0}
   gunPivot: {fileID: 6256275458434689791}
   firePoint: {fileID: 6654905650475816564}
@@ -865,12 +867,12 @@ MonoBehaviour:
   hasMaxDistance: 1
   maxDistance: 20
   launchToPoint: 1
-  Launch_Type: 1
+  launchType: 0
   launchSpeed: 1.23
-  autoCongifureDistance: 1
+  autoConfigureDistance: 0
   targetDistance: 1
   targetFrequency: 0.1
   m_springJoint2D: {fileID: 2815154001036663213}
+  ballRigidbody: {fileID: 4106840981829149746}
   grapplePoint: {x: 0, y: 0}
   DistanceVector: {x: 0, y: 0}
-  ballRigidbody: {fileID: 4106840981829149746}

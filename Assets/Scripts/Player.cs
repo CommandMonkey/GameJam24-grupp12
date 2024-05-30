@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
 {
     [Header("Visuals")]
     [SerializeField] Transform playerGraphics;
-
+    [SerializeField] GameObject doubleJumpVFX;
+ 
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] Collider2D groundCheck;
@@ -84,9 +85,20 @@ public class Player : MonoBehaviour
         if (!groundCheck.IsTouchingLayers(groundCheckMask) && jumpsLeft <= 0) { return; }
         if (value.isPressed)
         {
-            rigidbody2d.velocity += new Vector2(0, jumpHeight); 
+            rigidbody2d.velocity += new Vector2(0, jumpHeight);
+            PlayDoubleJumpVFX();
             jumpsLeft--;
         }
+    }
+
+    void PlayDoubleJumpVFX()
+    {
+        if(groundCheck.IsTouchingLayers(groundCheckMask)) { return; }
+        Vector2 spawnPosition = new Vector2(
+            transform.position.x, 
+            transform.position.y - transform.localScale.y / 2);
+        GameObject jumpVFX = Instantiate(doubleJumpVFX, transform.position, Quaternion.identity);
+        Destroy(jumpVFX, 2f);
     }
 
     void Run()
