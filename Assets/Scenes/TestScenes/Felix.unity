@@ -263,7 +263,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 100
+  far clip plane: 20000
   field of view: 75
   orthographic: 0
   orthographic size: 8
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 0.87
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -476,8 +476,8 @@ Transform:
   m_GameObject: {fileID: 659746590}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 125.65634, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 46, y: 532, z: 100}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -6212,11 +6212,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1142155395808744091, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1142155395808744091, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -66
+      value: -68.4
       objectReference: {fileID: 0}
     - target: {fileID: 1142155395808744091, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
       propertyPath: m_LocalPosition.z
