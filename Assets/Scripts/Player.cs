@@ -83,7 +83,6 @@ public class Player : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
         DownPressed = moveInput.y < 0 ? true : false;
-        WalkAnimation();
     }
 
     void OnDescend(InputValue value)
@@ -119,8 +118,13 @@ public class Player : MonoBehaviour
 
     void Run()
     {
+        bool playerIsMoving = Mathf.Abs(rigidbody2d.velocity.x) > Mathf.Epsilon;
         float moveX = moveInput.x * moveSpeed;
-        rigidbody2d.velocity = new Vector2(Mathf.Clamp(moveX + rigidbody2d.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp(rigidbody2d.velocity.y, -maxSpeed, maxSpeed));
+        rigidbody2d.velocity = new Vector2(
+            Mathf.Clamp(moveX + rigidbody2d.velocity.x, -maxSpeed, maxSpeed), 
+            Mathf.Clamp(rigidbody2d.velocity.y, -maxSpeed, maxSpeed));
+
+        animator.SetBool("IsWalking", playerIsMoving);
     }
 
     void ResetJumpCheck()
@@ -206,11 +210,6 @@ public class Player : MonoBehaviour
                 collectable.SetCollectTextActive(false);
             }
         }
-    }
-
-    void WalkAnimation()
-    {
-        animator.SetBool("IsWalking", true);
     }
 
     void OnInterract()
