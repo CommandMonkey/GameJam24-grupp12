@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 
-public class WateringShrineCollevctable : Collectible
+public class WateringShrineCollectable : Collectible
 {
     protected override void OnCollect()
     {
