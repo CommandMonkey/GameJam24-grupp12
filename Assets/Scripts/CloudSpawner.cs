@@ -12,8 +12,11 @@ public class CloudSpawner : MonoBehaviour
     private float minY = 50f;
     private float maxY = 250f;
 
-    public float cloudSpeed = 1f;
-    public float spawnInterval = 20f;
+    private float minZ = 0f;
+    private float maxZ = 30f;
+
+    public float cloudSpeed = 10f;
+    public float spawnInterval = 5f;
 
     void Start()
     {
@@ -29,17 +32,20 @@ public class CloudSpawner : MonoBehaviour
 
         // random y pos
         float randomY = Random.Range(minY, maxY);
+        // randm z pos
+        float randomZ = Random.Range(minZ, maxZ);
 
         // left or right
         bool spawnOnLeft = Random.value > 0.5f;
         Vector3 spawnPosition = spawnOnLeft ? leftSpawnPosition : rightSpawnPosition;
         spawnPosition.y = randomY;
+        spawnPosition.z = randomZ;
 
         GameObject cloud = Instantiate(cloudPrefab, spawnPosition, Quaternion.identity);
 
         // Add the CloudMover
         CloudMover mover = cloud.AddComponent<CloudMover>();
-        mover.Initialize(spawnOnLeft, cloudSpeed);
+        mover.Initialize(spawnOnLeft, -cloudSpeed);
     }
 }
 

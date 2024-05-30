@@ -518,7 +518,7 @@ MonoBehaviour:
   - {fileID: 1726671530}
   - {fileID: 1552896059}
   - {fileID: 1389131241}
-  cloudSpeed: 1
+  cloudSpeed: 10
   spawnInterval: 2
 --- !u!4 &663858938
 Transform:
@@ -6045,7 +6045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094442995443767389, guid: f46e526f2bb496d4eb0d245833eadd67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 5094442995443767389, guid: f46e526f2bb496d4eb0d245833eadd67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6212,11 +6212,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1142155395808744091, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1
+      value: -6.7
       objectReference: {fileID: 0}
     - target: {fileID: 1142155395808744091, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -68.4
+      value: -66.7
       objectReference: {fileID: 0}
     - target: {fileID: 1142155395808744091, guid: 03904926634caa24892bc9037f4a4eae, type: 3}
       propertyPath: m_LocalPosition.z
