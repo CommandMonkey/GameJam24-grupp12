@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] Transform playerGraphics;
     [SerializeField] GameObject doubleJumpVFX;
+    [SerializeField] Animator animator;
  
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
@@ -117,8 +118,13 @@ public class Player : MonoBehaviour
 
     void Run()
     {
+        bool playerIsMoving = Mathf.Abs(rigidbody2d.velocity.x) > Mathf.Epsilon;
         float moveX = moveInput.x * moveSpeed;
-        rigidbody2d.velocity = new Vector2(Mathf.Clamp(moveX + rigidbody2d.velocity.x, -maxSpeed, maxSpeed), Mathf.Clamp(rigidbody2d.velocity.y, -maxSpeed, maxSpeed));
+        rigidbody2d.velocity = new Vector2(
+            Mathf.Clamp(moveX + rigidbody2d.velocity.x, -maxSpeed, maxSpeed), 
+            Mathf.Clamp(rigidbody2d.velocity.y, -maxSpeed, maxSpeed));
+
+        animator.SetBool("IsWalking", playerIsMoving);
     }
 
     void ResetJumpCheck()
@@ -128,7 +134,6 @@ public class Player : MonoBehaviour
             jumpsLeft = jumpAmount;
         }
     }
-
 
     void OnShootStar()
     {
@@ -150,10 +155,10 @@ public class Player : MonoBehaviour
 
     void CalculateGravityScale()
     {
-        if (transform.position.y < startGravityDecreaseAfter) { return; }
+        if (transform.position.y < startGravityDecreaseAfter) return;
         float currentGravityScale;
 
-        currentGravityScale = defaultGravityScale * Mathf.Pow(gravityScaleDecrease, transform.position.y - startGravityDecreaseAfter);
+        currentGravityScale = defaultGravityScale * Mathf.Pow(gravityScaleDecrease, Mathf.Min(transform.position.y - startGravityDecreaseAfter, 1f));
         if (currentGravityScale < minGravity) 
         { 
             currentGravityScale = minGravity; 
@@ -212,10 +217,20 @@ public class Player : MonoBehaviour
 
     }
 
-    internal void AddWateringCan(int value)
+    internal bool AddWateringCan(int value)
     {
-        wateringCans += value;
-        UpdateWateringCanUI();
+        if (wateringCans + value < 0)
+        {
+            return false;
+        }
+        else
+        {
+            wateringCans += value;
+            UpdateWateringCanUI();
+            return true;
+        }
+
+
     }
 
     private void UpdateWateringCanUI()

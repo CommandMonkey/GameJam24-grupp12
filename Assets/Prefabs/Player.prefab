@@ -505,11 +505,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerGraphics: {fileID: 1869093593787485980}
   doubleJumpVFX: {fileID: 2897605861859445077, guid: 826899d07cb6fea4cb7771eadcb1542e, type: 3}
+  animator: {fileID: 314717864228441157}
   moveSpeed: 2
   groundCheck: {fileID: 2626021520880685157}
-  jumpHeight: 20
+  jumpHeight: 100
   jumpAmount: 1
-  startGravityDecreaseAfter: 300
+  startGravityDecreaseAfter: 5000
   gravityScaleDecrease: 0.985
   minGravity: 0.4
   maxSpeed: 20
