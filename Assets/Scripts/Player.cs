@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [Header("Visuals")]
     [SerializeField] Transform playerGraphics;
     [SerializeField] GameObject doubleJumpVFX;
+    [SerializeField] Animator animator;
  
     [Header("Movement")]
     [SerializeField] float moveSpeed = 5f;
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
         DownPressed = moveInput.y < 0 ? true : false;
+        WalkAnimation();
     }
 
     void OnDescend(InputValue value)
@@ -128,7 +130,6 @@ public class Player : MonoBehaviour
             jumpsLeft = jumpAmount;
         }
     }
-
 
     void OnShootStar()
     {
@@ -205,6 +206,11 @@ public class Player : MonoBehaviour
                 collectable.SetCollectTextActive(false);
             }
         }
+    }
+
+    void WalkAnimation()
+    {
+        animator.SetBool("IsWalking", true);
     }
 
     void OnInterract()
