@@ -15,7 +15,7 @@ public class Button : InteractablePuzzle
 
     IEnumerator WaitRoutine()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(2f);
         isActive = false;
     }
 }
