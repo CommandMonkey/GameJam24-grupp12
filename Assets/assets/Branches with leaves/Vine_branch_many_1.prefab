@@ -584,6 +584,7 @@ GameObject:
   - component: {fileID: 2922641581024121415}
   - component: {fileID: 2269358747917749306}
   - component: {fileID: 2825422241308834948}
+  - component: {fileID: 8877819488835174048}
   m_Layer: 0
   m_Name: Vine_branch_many_1
   m_TagString: Untagged
@@ -751,6 +752,27 @@ MonoBehaviour:
     m_Extent: {x: 74.96642, y: 97.015884, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!95 &8877819488835174048
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939088095214275310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 642c4ab3b802f504789e34d39500ebae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3019094419869379788
 GameObject:
   m_ObjectHideFlags: 0
