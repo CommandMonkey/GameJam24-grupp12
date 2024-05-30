@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
 
     void CalculateGravityScale()
     {
-        if (transform.position.y < startGravityDecreaseAfter) { return; }
+        if (transform.position.y < startGravityDecreaseAfter) return;
         float currentGravityScale;
 
         currentGravityScale = defaultGravityScale * Mathf.Pow(gravityScaleDecrease, Mathf.Min(transform.position.y - startGravityDecreaseAfter, 1f));
