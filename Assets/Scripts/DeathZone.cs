@@ -9,7 +9,7 @@ public class DeathZone : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.transform.position =
-           FindObjectOfType<WateringShrineCollevctable>().transform.position;
+           FindObjectOfType<WateringShrineCollectable>().transform.position;
     }
 
 }
